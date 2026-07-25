@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 
-// Портировано из production-кода kurort_trans_web:
-// client/src/components/Operators.js -> AccessRightsSection + OperatorCard.handleRightsChange.
-// Реальные: список прав (те же ключи и подписи, что в CRM) и логика переключения
+// Портировано из production-кода нашей CRM (Operators.js -> AccessRightsSection +
+// OperatorCard.handleRightsChange). Реальные: список прав (те же ключи и подписи,
+// что в CRM) и логика переключения
 // (иммутабельное обновление accessRights по ключу). В проде клик сохраняется
 // запросом к реальной CRM; здесь, без бэкенда, "Сохранить" просто показывает
 // локальное подтверждение. Стилизация — Tailwind вместо checkbox-стилей

@@ -39,9 +39,8 @@ export default function Home() {
             </h1>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60">
               Мы разрабатываем систему управления рейсами, кассой и персоналом
-              («Курорт-Транс») и достраиваем поверх неё брендированный сайт
-              бронирования — с вашим логотипом, вашим доменом и вашими
-              особенностями, под ключ.
+              и достраиваем поверх неё брендированный сайт бронирования — с
+              вашим логотипом, вашим доменом и вашими особенностями, под ключ.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/crm" className="btn-primary">
@@ -125,7 +124,7 @@ export default function Home() {
                   <Bus size={20} />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-ink-900">
-                  CRM «Курорт-Транс» — для вашего персонала
+                  Внутренняя CRM — для вашего персонала
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
                   Маршруты, рейсы, тарифы, парк, водители, кассиры, чёрный список,

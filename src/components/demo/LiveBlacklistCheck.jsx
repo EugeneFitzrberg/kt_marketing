@@ -3,9 +3,9 @@ import InputMask from 'react-input-mask';
 import moment from 'moment';
 import { Ban, CheckCircle2, HelpCircle } from 'lucide-react';
 
-// Логика этого компонента портирована из production-кода kurort_trans_web:
-// client/src/components/BlackList.js -> OperatorBlackList (быстрая проверка
-// номера операторами без доступа к полному списку). Реальные: маска телефона
+// Логика этого компонента портирована из production-кода нашей CRM
+// (BlackList.js -> OperatorBlackList, быстрая проверка номера операторами без
+// доступа к полному списку). Реальные: маска телефона
 // (react-input-mask, тот же формат), форматирование даты через moment, три
 // исхода проверки (в списке / не в списке / неизвестен). Единственная замена —
 // источник данных: в проде это запрос к реальной CRM, здесь — небольшой
