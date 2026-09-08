@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1220" />
+
+  <!-- subtle route-line motif -->
+  <path d="M -50 480 C 250 420, 450 560, 700 460 S 1150 380, 1300 420"
+        fill="none" stroke="#1e46e0" stroke-opacity="0.35" stroke-width="2" />
+  <path d="M -50 540 C 300 500, 500 610, 780 520 S 1180 470, 1300 500"
+        fill="none" stroke="#f79a1e" stroke-opacity="0.22" stroke-width="2" />
+
+  <!-- brand mark -->
+  <rect x="96" y="96" width="56" height="56" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" />
+  <text x="124" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#ffffff" text-anchor="middle">T</text>
+
+  <text x="96" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="400" fill="#ffffff">TIT</text>
+
+  <text x="96" y="340" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="30" fill="#ffffff" fill-opacity="0.75">
+    CRM и сайты бронирования для перевозчиков
+  </text>
+
+  <text x="96" y="390" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" fill="#ffffff" fill-opacity="0.45">
+    Маршруты, водители, транспорт, пассажиры — и брендированный сайт бронирования поверх
+  </text>
+
+  <text x="96" y="534" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#3466ff">
+    EUGENEFITZRBERG.GITHUB.IO/KT_MARKETING
+  </text>
+</svg>

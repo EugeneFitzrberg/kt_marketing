@@ -34,7 +34,7 @@ export default function PassengerSite() {
           <span className="section-eyebrow !text-sun-400">
             Сайт для ваших пассажиров
           </span>
-          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-tight tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Брендированный сайт бронирования — с вашим логотипом, вашим
             доменом и вашими маршрутами
           </h1>
@@ -95,7 +95,7 @@ export default function PassengerSite() {
             <BrowserMockup>
               <div className="flex items-center gap-2">
                 <ShieldCheck size={16} className="text-sun-600" />
-                <div className="h-2.5 w-40 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Схема запроса</span>
               </div>
               <div className="mt-4 flex items-center justify-center gap-3 py-2">
                 <div className="rounded-xl border border-ink-900/10 bg-ink-50/60 px-4 py-3 text-center text-xs font-semibold text-ink-900/70">
@@ -196,24 +196,30 @@ export default function PassengerSite() {
           />
           <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="border-t border-white/15 pt-5">
-              <Smartphone size={19} strokeWidth={1.75} className="text-sun-400" />
-              <h3 className="mt-3.5 text-[15px] font-semibold text-white">PWA и push</h3>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-sun-400/40">
+                <Smartphone size={17} strokeWidth={1.75} className="text-sun-400" />
+              </span>
+              <h3 className="mt-4 text-base font-bold text-white">PWA и push</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Сайт ставится на телефон как приложение и присылает
                 напоминания о рейсе без App Store и Google Play.
               </p>
             </div>
             <div className="border-t border-white/15 pt-5">
-              <Search size={19} strokeWidth={1.75} className="text-brand-300" />
-              <h3 className="mt-3.5 text-[15px] font-semibold text-white">SEO из коробки</h3>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-400/40">
+                <Search size={17} strokeWidth={1.75} className="text-brand-300" />
+              </span>
+              <h3 className="mt-4 text-base font-bold text-white">SEO из коробки</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Карта сайта, мета-описания страниц и структурированный
                 текстовый контент — сайт индексируется с первого дня.
               </p>
             </div>
             <div className="border-t border-white/15 pt-5">
-              <ShieldCheck size={19} strokeWidth={1.75} className="text-sun-400" />
-              <h3 className="mt-3.5 text-[15px] font-semibold text-white">Юридическая база</h3>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-sun-400/40">
+                <ShieldCheck size={17} strokeWidth={1.75} className="text-sun-400" />
+              </span>
+              <h3 className="mt-4 text-base font-bold text-white">Юридическая база</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Готовые страницы политики конфиденциальности и
                 использования cookie — не нужно писать их с нуля перед запуском.
@@ -231,7 +237,7 @@ export default function PassengerSite() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="h-8 w-8 rounded-lg bg-sun-500" />
-                  <div className="h-2.5 w-24 rounded-full bg-ink-900/10" />
+                  <span className="text-xs font-semibold text-ink-900/60">Ваш логотип</span>
                 </div>
                 <div className="h-7 w-16 rounded-lg bg-ink-900/10" />
               </div>

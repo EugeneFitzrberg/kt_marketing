@@ -27,6 +27,7 @@ import {
   UserPlus,
   UserCheck,
   PhoneIncoming,
+  ArrowDown,
   Clock,
   Copy,
   Globe,
@@ -53,7 +54,7 @@ export default function Crm() {
           <span className="section-eyebrow !text-brand-300">
             CRM для перевозчика
           </span>
-          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-tight tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Единая система для рейсов, кассы, водителей и пассажиров
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/60">
@@ -100,7 +101,7 @@ export default function Crm() {
             <BrowserMockup>
               <div className="flex items-center gap-2">
                 <CalendarClock size={16} className="text-brand-600" />
-                <div className="h-2.5 w-32 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Расписание на неделю</span>
               </div>
               <div className="mt-4 space-y-2">
                 {[
@@ -136,7 +137,7 @@ export default function Crm() {
             <BrowserMockup className="order-2 lg:order-1">
               <div className="flex items-center gap-2">
                 <UserPlus size={16} className="text-brand-600" />
-                <div className="h-2.5 w-32 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Новый водитель</span>
               </div>
               <div className="mt-4 rounded-lg border border-ink-900/5 bg-ink-50/60 p-3 text-xs">
                 <div className="font-semibold text-ink-900/80">Иванов Пётр Сергеевич</div>
@@ -193,7 +194,7 @@ export default function Crm() {
             <BrowserMockup className="order-2 lg:order-1">
               <div className="flex items-center gap-2">
                 <ListChecks size={16} className="text-brand-600" />
-                <div className="h-2.5 w-36 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Очередь заявок</span>
               </div>
               <div className="mt-4 space-y-2.5">
                 <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[11px] font-medium text-red-700">
@@ -260,7 +261,7 @@ export default function Crm() {
             <BrowserMockup>
               <div className="flex items-center gap-2">
                 <UserCheck size={16} className="text-brand-600" />
-                <div className="h-2.5 w-40 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Список пассажиров рейса</span>
               </div>
               <div className="mt-4 space-y-2">
                 {[
@@ -332,6 +333,17 @@ export default function Crm() {
               следующем же запросе.
             </FeatureCard>
           </div>
+        </div>
+      </section>
+
+      {/* MID-PAGE BREAK */}
+      <section className="bg-brand-600 py-16 sm:py-20">
+        <div className="container-page text-center">
+          <p className="mx-auto max-w-2xl font-serif text-2xl font-normal leading-snug text-white sm:text-3xl">
+            «Раньше — рация, три звонка и Excel-табличка. Теперь — один
+            экран, где видно всё: от заявки на сайте до отметки водителя о
+            посадке.»
+          </p>
         </div>
       </section>
 
@@ -415,22 +427,25 @@ export default function Crm() {
             tone="dark"
           />
           <div className="mx-auto mt-12 max-w-4xl">
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <div className="flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
               <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
                 <Send size={16} className="text-brand-300" />
                 <span className="text-sm font-semibold text-white">Telegram</span>
               </div>
-              <ArrowRight size={16} className="text-white/25" />
+              <ArrowDown size={16} className="text-white/25 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-white/25 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
                 <Bot size={16} className="text-brand-300" />
                 <span className="text-sm font-semibold text-white">Max</span>
               </div>
-              <ArrowRight size={16} className="text-white/25" />
+              <ArrowDown size={16} className="text-white/25 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-white/25 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
                 <MessageCircle size={16} className="text-brand-300" />
                 <span className="text-sm font-semibold text-white">WhatsApp</span>
               </div>
-              <ArrowRight size={16} className="text-white/25" />
+              <ArrowDown size={16} className="text-white/25 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-white/25 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-sun-400/40 bg-sun-400/10 px-4 py-3">
                 <Phone size={16} className="text-sun-400" />
                 <span className="text-sm font-semibold text-sun-300">SMS — гарантированно</span>
@@ -449,8 +464,10 @@ export default function Crm() {
               [Phone, 'SMS (SMSAero)', 'Гарантированный последний канал — дойдёт даже без интернета у пассажира'],
             ].map(([Icon, title, desc]) => (
               <div key={title} className="border-t border-white/15 pt-5">
-                <Icon size={18} strokeWidth={1.75} className="text-brand-300" />
-                <h3 className="mt-3.5 text-sm font-semibold text-white">{title}</h3>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-400/40">
+                  <Icon size={17} strokeWidth={1.75} className="text-brand-300" />
+                </span>
+                <h3 className="mt-4 text-base font-bold text-white">{title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
@@ -473,7 +490,7 @@ export default function Crm() {
             <BrowserMockup className="order-2 lg:order-1">
               <div className="flex items-center gap-2">
                 <TrendingUp size={16} className="text-brand-600" />
-                <div className="h-2.5 w-32 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Статистика за месяц</span>
               </div>
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <div className="rounded-xl border border-ink-900/5 bg-ink-50/60 p-3">

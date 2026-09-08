@@ -12,6 +12,7 @@ import {
   Eye,
   ScrollText,
   Network,
+  ArrowDown,
   Smartphone,
   GitBranch,
   Activity,
@@ -27,13 +28,33 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-white/10 bg-ink-950">
-        <div className="container-page grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+      <section className="relative overflow-hidden border-b border-white/10 bg-ink-950">
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-40"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 600"
+          aria-hidden="true"
+        >
+          <path
+            d="M -50 380 C 250 300, 450 460, 700 360 S 1150 260, 1300 320"
+            fill="none"
+            stroke="#3466ff"
+            strokeWidth="2"
+          />
+          <path
+            d="M -50 460 C 300 410, 520 540, 800 440 S 1180 380, 1300 420"
+            fill="none"
+            stroke="#f79a1e"
+            strokeWidth="2"
+            opacity="0.6"
+          />
+        </svg>
+        <div className="container-page relative grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
           <div>
             <span className="section-eyebrow !text-brand-300">
               Софт для автотранспортных и туристических компаний
             </span>
-            <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
               CRM для вашей команды и брендированный сайт для ваших пассажиров —
               на одной платформе
             </h1>
@@ -62,7 +83,7 @@ export default function Home() {
           <div className="lg:pl-4">
             <BrowserMockup>
               <div className="flex items-center justify-between">
-                <div className="h-3 w-24 rounded-full bg-ink-900/10" />
+                <span className="text-xs font-semibold text-ink-900/60">Дашборд · Сегодня</span>
                 <div className="h-6 w-20 rounded-lg bg-brand-600/90" />
               </div>
               <div className="mt-5 grid grid-cols-3 gap-3">
@@ -101,6 +122,31 @@ export default function Home() {
                 ))}
               </div>
             </BrowserMockup>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS STRIP */}
+      <section className="border-b border-ink-900/10 py-14">
+        <div className="container-page">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            {[
+              ['4', 'канала уведомлений — Telegram, Max, WhatsApp, SMS', 'brand'],
+              ['7', 'дашбордов Grafana в реальном времени', 'sun'],
+              ['0', 'секунд простоя при каждом обновлении', 'brand'],
+              ['24/7', 'алерты в Telegram при сбоях', 'sun'],
+            ].map(([num, label, tone]) => (
+              <div key={label}>
+                <div
+                  className={`font-serif text-4xl sm:text-5xl ${
+                    tone === 'sun' ? 'text-sun-600' : 'text-brand-600'
+                  }`}
+                >
+                  {num}
+                </div>
+                <div className="mt-2 text-xs leading-relaxed text-ink-900/50">{label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -152,22 +198,25 @@ export default function Home() {
             <div className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-900/40">
               Как заявка проходит через обе системы
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
               <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
                 <Globe2 size={16} className="text-sun-600" />
                 <span className="text-sm font-medium text-ink-900/80">Пассажир бронирует на сайте</span>
               </div>
-              <ArrowRight size={16} className="text-ink-900/20" />
+              <ArrowDown size={16} className="text-ink-900/20 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-ink-900/20 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
                 <ListChecks size={16} className="text-brand-600" />
                 <span className="text-sm font-medium text-ink-900/80">Заявка мгновенно в очереди CRM</span>
               </div>
-              <ArrowRight size={16} className="text-ink-900/20" />
+              <ArrowDown size={16} className="text-ink-900/20 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-ink-900/20 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
                 <UserCheck size={16} className="text-brand-600" />
                 <span className="text-sm font-medium text-ink-900/80">Оператор подтверждает</span>
               </div>
-              <ArrowRight size={16} className="text-ink-900/20" />
+              <ArrowDown size={16} className="text-ink-900/20 sm:hidden" />
+              <ArrowRight size={16} className="hidden text-ink-900/20 sm:block" />
               <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
                 <Bot size={16} className="text-sun-600" />
                 <span className="text-sm font-medium text-ink-900/80">Водитель отмечает явку в Telegram</span>
@@ -304,8 +353,10 @@ export default function Home() {
               ],
             ].map(([Icon, title, desc]) => (
               <div key={title} className="border-t border-white/15 pt-5">
-                <Icon size={18} strokeWidth={1.75} className="text-brand-300" />
-                <h3 className="mt-3.5 text-sm font-semibold text-white">{title}</h3>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-400/40">
+                  <Icon size={17} strokeWidth={1.75} className="text-brand-300" />
+                </span>
+                <h3 className="mt-4 text-base font-bold text-white">{title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
@@ -346,24 +397,46 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex items-center justify-center">
-              <BrowserMockup className="w-full max-w-sm">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-brand-600" />
-                  <div className="h-3 w-28 rounded-full bg-ink-900/10" />
-                </div>
-                <div className="mt-5 rounded-xl border border-ink-900/5 bg-ink-50/60 p-4">
-                  <div className="h-2.5 w-20 rounded-full bg-ink-900/10" />
-                  <div className="mt-3 flex gap-2">
-                    <div className="h-9 flex-1 rounded-lg bg-white ring-1 ring-ink-900/10" />
-                    <div className="h-9 flex-1 rounded-lg bg-white ring-1 ring-ink-900/10" />
-                  </div>
-                  <div className="mt-3 h-9 w-full rounded-lg bg-sun-500" />
-                </div>
-                <div className="mt-4 space-y-2">
-                  <div className="h-2 w-full rounded-full bg-ink-900/5" />
-                  <div className="h-2 w-4/5 rounded-full bg-ink-900/5" />
-                </div>
-              </BrowserMockup>
+              <svg viewBox="-20 0 640 260" className="w-full max-w-md" role="img" aria-label="Города Урала, где уже работает платформа">
+                <defs>
+                  <linearGradient id="routeLineGradient" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#3466ff" />
+                    <stop offset="100%" stopColor="#f79a1e" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M40,170 L130,95 L210,155 L290,80 L370,145 L460,70 L560,135"
+                  fill="none"
+                  stroke="url(#routeLineGradient)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity="0.85"
+                />
+                {[
+                  ['Уфа', 40, 170, 'below'],
+                  ['Белорецк', 130, 95, 'above'],
+                  ['Абзаково', 210, 155, 'below'],
+                  ['Банное', 290, 80, 'above'],
+                  ['Магнитогорск', 370, 145, 'below'],
+                  ['Челябинск', 460, 70, 'above'],
+                  ['Екатеринбург', 560, 135, 'below'],
+                ].map(([name, x, y, pos]) => (
+                  <g key={name}>
+                    <circle cx={x} cy={y} r="6" fill="#0b1220" stroke="#ffffff" strokeWidth="2" />
+                    <text
+                      x={x}
+                      y={pos === 'above' ? y - 14 : y + 22}
+                      textAnchor="middle"
+                      fontSize="13"
+                      fontFamily="Georgia, 'Times New Roman', serif"
+                      fill="#0f172a"
+                    >
+                      {name}
+                    </text>
+                  </g>
+                ))}
+              </svg>
             </div>
           </div>
         </div>

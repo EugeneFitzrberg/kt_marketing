@@ -10,7 +10,7 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
         </span>
       )}
       <h2
-        className={`mt-4 font-serif text-3xl font-normal leading-tight tracking-tight sm:text-4xl ${
+        className={`mt-4 font-serif text-3xl font-normal leading-tight tracking-tight sm:text-4xl lg:text-5xl ${
           isDark ? 'text-white' : 'text-ink-900'
         }`}
       >
