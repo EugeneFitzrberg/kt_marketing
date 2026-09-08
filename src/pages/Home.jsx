@@ -6,8 +6,11 @@ import {
   ShieldCheck,
   Radio,
   BarChart3,
-  Users,
-  Bell,
+  Lock,
+  KeyRound,
+  Eye,
+  ScrollText,
+  Network,
   Smartphone,
   GitBranch,
   Activity,
@@ -164,6 +167,103 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ARCHITECTURE & NETWORK ISOLATION */}
+      <section className="bg-ink-950 py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Архитектура и безопасность"
+            title="Общий бэкенд — но не общий периметр"
+            description="CRM и сайт для пассажиров работают с одними и теми же данными, но у сайта нет прямого доступа к внутренним сервисам CRM, а у CRM нет ни одного порта, смотрящего в интернет напрямую. Изоляция — не на словах, а на уровне сети."
+            align="center"
+            tone="dark"
+          />
+
+          <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+            <div className="flex flex-col items-center gap-2">
+              <div className="rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white/70">
+                Интернет
+              </div>
+              <div className="h-6 w-px bg-white/15" />
+              <div className="rounded-lg border border-brand-400/40 bg-brand-500/10 px-4 py-2.5 text-xs font-semibold text-brand-300">
+                TLS-шлюз — единственная точка входа
+              </div>
+              <div className="h-6 w-px bg-white/15" />
+              <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-8">
+                <div className="flex-1 rounded-lg border border-sun-400/30 bg-sun-400/10 px-4 py-2.5 text-center text-xs font-semibold text-sun-300">
+                  Сайт для пассажиров
+                  <div className="mt-0.5 text-[10px] font-normal text-white/40">только whitelist-запросы</div>
+                </div>
+                <div className="flex-1 rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-center text-xs font-semibold text-white/80">
+                  CRM для персонала
+                  <div className="mt-0.5 text-[10px] font-normal text-white/40">вход по коду, роли и права</div>
+                </div>
+              </div>
+              <div className="h-6 w-px bg-white/15" />
+              <div className="w-full rounded-xl border border-white/10 bg-black/20 p-4">
+                <div className="mb-2.5 text-center text-[10px] font-semibold uppercase tracking-wider text-white/30">
+                  Внутренняя сеть — снаружи не видна
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {['API', 'WebSocket', 'База данных', 'Планировщик', 'Telegram-бот', 'Grafana / Prometheus'].map(
+                    (n) => (
+                      <span
+                        key={n}
+                        className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/60"
+                      >
+                        {n}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              [
+                ShieldCheck,
+                'Единственная точка входа',
+                'В интернет смотрит только TLS-шлюз. База данных, API, очереди и внутренние сервисы никогда не получают публичный адрес и обращаются друг к другу только по внутренней сети.',
+              ],
+              [
+                Lock,
+                'Белый список для сайта пассажиров',
+                'Публичный сайт обращается к CRM не напрямую, а через шлюз с заранее одобренным списком запросов — всё, чего нет в списке, отклоняется, даже не долетев до CRM.',
+              ],
+              [
+                KeyRound,
+                'Проверка источника платежей',
+                'Уведомления от платёжной системы принимаются только с её официальных адресов — запрос с произвольного источника получает отказ.',
+              ],
+              [
+                Eye,
+                'Мониторинг закрыт от интернета',
+                'Дашборды с бизнес-метриками и логами доступны только из VPN — снаружи их не существует ни в каком виде.',
+              ],
+              [
+                ScrollText,
+                'Аудит обращений между сайтами',
+                'Каждый вызов от сайта пассажиров к CRM протоколируется отдельно от логов самой CRM — виден полный след, кто и когда обращался.',
+              ],
+              [
+                Network,
+                'Разные сети для разных продуктов',
+                'Сайт для пассажиров и внутренняя CRM — разные приложения в разных сетевых сегментах: инцидент на одном не даёт прямого доступа к другому.',
+              ],
+            ].map(([Icon, title, desc]) => (
+              <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
+                  <Icon size={18} />
+                </div>
+                <h3 className="mt-4 text-sm font-bold text-white">{title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-white/50">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHY US / RELIABILITY */}
       <section className="bg-ink-50/40 py-20 sm:py-24">
         <div className="container-page">
@@ -190,8 +290,9 @@ export default function Home() {
               пассажир — у каждого свой экран и свои возможности.
             </FeatureCard>
             <FeatureCard icon={BarChart3} title="Автотесты и CI/CD" tone="sun">
-              Каждый пуш в основную ветку собирает и прогоняет автотесты, прежде
-              чем что-либо попадёт на прод.
+              Каждый пуш в основную ветку собирает образы и прогоняет автотесты;
+              сама выкладка на прод — отдельный шаг с ревью и автоматическим
+              откатом, если после неё не проходит проверка здоровья сервиса.
             </FeatureCard>
             <FeatureCard icon={Smartphone} title="PWA для пассажиров">
               Сайт бронирования ставится на телефон как приложение и умеет слать
