@@ -24,6 +24,9 @@ import {
   Map,
   ArrowRightLeft,
   Bot,
+  UserPlus,
+  UserCheck,
+  PhoneIncoming,
 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
 import FeatureCard from '../components/FeatureCard.jsx';
@@ -76,7 +79,6 @@ export default function Crm() {
                   'Отложенное изменение цены: новый тариф на участок маршрута можно запланировать на дату в будущем — сработает само, без ручного переключения в нужный день',
                   'Массовое копирование расписания одного дня на диапазон дат — с проверкой, что вперёд не заходит дальше разрешённого горизонта бронирования',
                   'Индикатор «сейчас» в календаре считается по часовому поясу города отправления, а не браузера — расписание не «плывёт» для сотрудников в другом регионе',
-                  'Паспорт каждого борта — класс комфорта, кондиционер, Wi-Fi, откидные кресла, статус техосмотра — оператор назначает подходящий транспорт на рейс в два клика',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
@@ -114,6 +116,63 @@ export default function Crm() {
                 Место удержано: осталось 4:52 до снятия временной брони
               </div>
             </BrowserMockup>
+          </div>
+        </div>
+      </section>
+
+      {/* DRIVERS & FLEET */}
+      <section className="bg-ink-50/40 py-20 sm:py-24">
+        <div className="container-page">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <BrowserMockup className="order-2 lg:order-1">
+              <div className="flex items-center gap-2">
+                <UserPlus size={16} className="text-brand-600" />
+                <div className="h-2.5 w-32 rounded-full bg-ink-900/10" />
+              </div>
+              <div className="mt-4 rounded-lg border border-ink-900/5 bg-ink-50/60 p-3 text-xs">
+                <div className="font-semibold text-ink-900/80">Иванов Пётр Сергеевич</div>
+                <div className="mt-0.5 text-ink-900/50">+7 (900) 123-45-67 · водитель</div>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  <span className="rounded-md bg-brand-50 px-2 py-0.5 font-medium text-brand-600">
+                    Закреплён: Setra S515 HD
+                  </span>
+                </div>
+              </div>
+              <div className="mt-3 rounded-lg border border-ink-900/5 bg-ink-50/60 p-3 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-ink-900/80">Setra S515 HD · А 123 БВ 174</span>
+                  <span className="text-ink-900/50">49 мест</span>
+                </div>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {['Кондиционер', 'TV', 'Откидные спинки'].map((f) => (
+                    <span key={f} className="rounded-md bg-sun-400/15 px-2 py-0.5 font-medium text-sun-600">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </BrowserMockup>
+
+            <div className="order-1 lg:order-2">
+              <SectionHeading
+                eyebrow="Парк и персонал"
+                title="Водитель и машина заводятся за минуту"
+                description="Новый водитель — это телефон и ФИО: как только карточка создана, он уже может открыть Telegram-бота компании и увидеть свои рейсы — без пароля и установки приложения. Новая машина — марка, модель, категория, гос. номер и вместимость."
+              />
+              <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
+                {[
+                  'Комфорт-опции техники — кондиционер, TV, откидные спинки, дезинфекция — отмечаются один раз и видны и оператору при назначении, и пассажиру при выборе рейса',
+                  'Основной водитель закрепляется за машиной прямо в карточке транспорта',
+                  'Назначение машины на конкретный рейс — прямо в календаре расписания, без переключения между разделами',
+                  'Поиск по парку и водителям, когда список большой — не нужно листать всё вручную',
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -160,6 +219,67 @@ export default function Crm() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PASSENGER TRACKING */}
+      <section className="py-20 sm:py-24">
+        <div className="container-page">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <SectionHeading
+                eyebrow="В день рейса"
+                title="Видно, кто где сел и кто не пришёл"
+                description="У каждого пассажира в брони — конкретная точка посадки и точка высадки, а не просто «маршрут». А когда автобус отправляется, водитель отмечает явку каждого пассажира прямо в Telegram — без рации и звонков в офис."
+              />
+              <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
+                {[
+                  'Точка посадки и точка высадки закрепляются за каждым пассажиром отдельно — их видно на карте остановок города',
+                  'Водитель отмечает «явка» или «неявка» по каждому пассажиру в Telegram-боте — статус обновляется в CRM в реальном времени',
+                  'Если по пассажиру числится оплата наличными водителю, это видно прямо рядом с отметкой явки — деньги не потеряются между рейсом и кассой',
+                  'Оператор в любой момент видит фактический список севших, а не только список забронировавших',
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <BrowserMockup>
+              <div className="flex items-center gap-2">
+                <UserCheck size={16} className="text-brand-600" />
+                <div className="h-2.5 w-40 rounded-full bg-ink-900/10" />
+              </div>
+              <div className="mt-4 space-y-2">
+                {[
+                  ['Сидорова Анна', 'Сочи, ж/д вокзал', 'явка', 'brand'],
+                  ['Петров Игорь', 'Сочи, аэропорт', 'явка', 'brand'],
+                  ['Кузнецов Олег', 'Адлер, автовокзал', 'неявка', 'red'],
+                  ['Волкова Мария', 'Адлер, автовокзал', 'ожидание', 'sun'],
+                ].map(([name, stop, status, tone]) => (
+                  <div key={name} className="rounded-lg border border-ink-900/5 bg-ink-50/60 px-3 py-2.5 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium text-ink-900/80">{name}</span>
+                      <span
+                        className={`rounded-md px-2 py-0.5 font-semibold ${
+                          tone === 'brand'
+                            ? 'bg-brand-50 text-brand-600'
+                            : tone === 'red'
+                              ? 'bg-red-50 text-red-600'
+                              : 'bg-sun-400/15 text-sun-600'
+                        }`}
+                      >
+                        {status}
+                      </span>
+                    </div>
+                    <div className="mt-1 text-ink-900/40">{stop}</div>
+                  </div>
+                ))}
+              </div>
+            </BrowserMockup>
           </div>
         </div>
       </section>
@@ -244,6 +364,11 @@ export default function Crm() {
             <FeatureCard icon={Bus} title="Быстрое оформление на кассе">
               Запись пассажира на рейс с удержанием места на время оформления
               и обратным отсчётом, чтобы место не «зависало» впустую.
+            </FeatureCard>
+            <FeatureCard icon={PhoneIncoming} title="Звонок клиента — номер уже в форме">
+              Учётная запись оператора привязана к его линии в офисной
+              телефонии Oktell: на входящем звонке номер абонента вставляется
+              в форму бронирования одним кликом, без ручного ввода.
             </FeatureCard>
             <FeatureCard icon={MapPinned} title="Каталог экскурсий с фотогалереей" tone="sun">
               Программа, длительность, что включено в цену и максимальный

@@ -146,6 +146,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WHY US / RELIABILITY */}
+      <section className="bg-ink-50/40 py-20 sm:py-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Почему это надёжно"
+            title="Построено как промышленная система, а не как студенческий проект"
+            align="center"
+          />
+          <div className="mx-auto mt-12 grid max-w-5xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard icon={GitBranch} title="Обновления без простоя">
+              Docker Swarm поднимает новую версию, ждёт health-check и только потом
+              выключает старую — пассажиры не замечают релизов.
+            </FeatureCard>
+            <FeatureCard icon={Activity} title="Мониторинг из коробки">
+              Дашборды Grafana по бизнес-метрикам, нагрузке, маршрутам и базе
+              данных, алерты в Telegram при сбоях.
+            </FeatureCard>
+            <FeatureCard icon={Radio} title="4 канала связи с пассажиром" tone="sun">
+              Telegram, SMS, WhatsApp и push-уведомления — напоминания о рейсе
+              доходят тем способом, которым реально пользуется человек.
+            </FeatureCard>
+            <FeatureCard icon={ShieldCheck} title="Роли и права доступа">
+              Администратор, оператор с гибкими правами, водитель, менеджер,
+              пассажир — у каждого свой экран и свои возможности.
+            </FeatureCard>
+            <FeatureCard icon={BarChart3} title="Автотесты и CI/CD" tone="sun">
+              Каждый пуш в основную ветку собирает образы и прогоняет автотесты;
+              сама выкладка на прод — отдельный шаг с ревью и автоматическим
+              откатом, если после неё не проходит проверка здоровья сервиса.
+            </FeatureCard>
+            <FeatureCard icon={Smartphone} title="PWA для пассажиров">
+              Сайт бронирования ставится на телефон как приложение и умеет слать
+              push-уведомления без App Store и Google Play.
+            </FeatureCard>
+          </div>
+        </div>
+      </section>
+
       {/* ARCHITECTURE & NETWORK ISOLATION */}
       <section className="bg-ink-950 py-20 sm:py-24">
         <div className="container-page">
@@ -237,44 +275,6 @@ export default function Home() {
                 <p className="mt-2 text-xs leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US / RELIABILITY */}
-      <section className="bg-ink-50/40 py-20 sm:py-24">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Почему это надёжно"
-            title="Построено как промышленная система, а не как студенческий проект"
-            align="center"
-          />
-          <div className="mx-auto mt-12 grid max-w-5xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            <FeatureCard icon={GitBranch} title="Обновления без простоя">
-              Docker Swarm поднимает новую версию, ждёт health-check и только потом
-              выключает старую — пассажиры не замечают релизов.
-            </FeatureCard>
-            <FeatureCard icon={Activity} title="Мониторинг из коробки">
-              Дашборды Grafana по бизнес-метрикам, нагрузке, маршрутам и базе
-              данных, алерты в Telegram при сбоях.
-            </FeatureCard>
-            <FeatureCard icon={Radio} title="4 канала связи с пассажиром" tone="sun">
-              Telegram, SMS, WhatsApp и push-уведомления — напоминания о рейсе
-              доходят тем способом, которым реально пользуется человек.
-            </FeatureCard>
-            <FeatureCard icon={ShieldCheck} title="Роли и права доступа">
-              Администратор, оператор с гибкими правами, водитель, менеджер,
-              пассажир — у каждого свой экран и свои возможности.
-            </FeatureCard>
-            <FeatureCard icon={BarChart3} title="Автотесты и CI/CD" tone="sun">
-              Каждый пуш в основную ветку собирает образы и прогоняет автотесты;
-              сама выкладка на прод — отдельный шаг с ревью и автоматическим
-              откатом, если после неё не проходит проверка здоровья сервиса.
-            </FeatureCard>
-            <FeatureCard icon={Smartphone} title="PWA для пассажиров">
-              Сайт бронирования ставится на телефон как приложение и умеет слать
-              push-уведомления без App Store и Google Play.
-            </FeatureCard>
           </div>
         </div>
       </section>
