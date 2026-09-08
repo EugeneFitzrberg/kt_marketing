@@ -180,12 +180,12 @@ export default function Home() {
             <Link to="/passenger-site" className="group flex flex-col sm:pl-10">
               <span className="font-serif text-4xl text-ink-900/20">02</span>
               <h3 className="mt-4 text-lg font-semibold text-ink-900">
-                Брендированный сайт — для ваших пассажиров
+                Брендированный сайт — для пассажиров, водителей и менеджеров
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
-                Поиск и бронирование рейсов, трансферов и групповых туров, оплата
-                онлайн, электронный билет, личный кабинет и push-уведомления — под
-                вашим логотипом и доменом.
+                Поиск и бронирование рейсов, оплата онлайн, электронный билет —
+                и отдельные кабинеты для водителей и менеджеров с финансовой
+                статистикой, на том же сайте под вашим брендом.
               </p>
               <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-sun-600">
                 Подробнее о сайте
