@@ -26,10 +26,10 @@ export default function PassengerSite() {
       {/* HERO */}
       <section className="bg-ink-950">
         <div className="container-page py-16 sm:py-20">
-          <span className="section-eyebrow !border-white/15 !bg-white/5 !text-sun-400">
+          <span className="section-eyebrow !text-sun-400">
             Сайт для ваших пассажиров
           </span>
-          <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-tight tracking-tight text-white sm:text-5xl">
             Брендированный сайт бронирования — с вашим логотипом, вашим
             доменом и вашими маршрутами
           </h1>
@@ -133,7 +133,7 @@ export default function PassengerSite() {
             title="Полный цикл — от поиска рейса до билета на руках"
             description="Пошаговый визард бронирования: поиск → выбор мест → данные пассажиров → подтверждение — адаптированный под три формата поездок."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-3">
             <FeatureCard icon={Bus} title="Рейсы по расписанию">
               Поиск по направлению, дате и числу мест, выбор конкретного
               рейса и посадочных мест — с онлайн-бронированием и оплатой.
@@ -158,7 +158,7 @@ export default function PassengerSite() {
             eyebrow="После бронирования"
             title="Оплата, билет и всё, что нужно пассажиру дальше"
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             <FeatureCard icon={CreditCard} title="Оплата онлайн или водителю">
               Приём платежей через ЮKassa прямо на сайте — а где это удобнее
               вашим пассажирам, можно оставить и оплату наличными водителю:
@@ -189,32 +189,26 @@ export default function PassengerSite() {
             align="center"
             tone="dark"
           />
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sun-400/15 text-sun-400">
-                <Smartphone size={20} />
-              </div>
-              <h3 className="mt-4 text-[15px] font-bold text-white">PWA и push</h3>
+          <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="border-t border-white/15 pt-5">
+              <Smartphone size={19} strokeWidth={1.75} className="text-sun-400" />
+              <h3 className="mt-3.5 text-[15px] font-semibold text-white">PWA и push</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Сайт ставится на телефон как приложение и присылает
                 напоминания о рейсе без App Store и Google Play.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/20 text-brand-300">
-                <Search size={20} />
-              </div>
-              <h3 className="mt-4 text-[15px] font-bold text-white">SEO из коробки</h3>
+            <div className="border-t border-white/15 pt-5">
+              <Search size={19} strokeWidth={1.75} className="text-brand-300" />
+              <h3 className="mt-3.5 text-[15px] font-semibold text-white">SEO из коробки</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Карта сайта, мета-описания страниц и структурированный
                 текстовый контент — сайт индексируется с первого дня.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sun-400/15 text-sun-400">
-                <ShieldCheck size={20} />
-              </div>
-              <h3 className="mt-4 text-[15px] font-bold text-white">Юридическая база</h3>
+            <div className="border-t border-white/15 pt-5">
+              <ShieldCheck size={19} strokeWidth={1.75} className="text-sun-400" />
+              <h3 className="mt-3.5 text-[15px] font-semibold text-white">Юридическая база</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/50">
                 Готовые страницы политики конфиденциальности и
                 использования cookie — не нужно писать их с нуля перед запуском.
@@ -258,17 +252,27 @@ export default function PassengerSite() {
       {/* CASE STUDY */}
       <section id="case-study" className="bg-ink-50/40 py-20 sm:py-24">
         <div className="container-page">
-          <div className="mx-auto max-w-3xl rounded-3xl border border-ink-900/5 bg-white p-8 text-center shadow-card sm:p-10">
-            <span className="section-eyebrow">Реальный кейс</span>
-            <h2 className="mt-4 text-xl font-bold text-ink-900 sm:text-2xl">
-              По этой концепции уже работает сайт «КТ Пассажиры»
+          <div className="mx-auto max-w-3xl border border-ink-900/10 bg-white p-8 text-center sm:p-10">
+            <span className="section-eyebrow">Уже в работе</span>
+            <h2 className="mt-4 font-serif text-xl font-normal text-ink-900 sm:text-2xl">
+              Нашим ПО пользуются перевозчики Урала
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-ink-900/60">
-              Для одного регионального перевозчика мы собрали именно такой
-              сайт — со своим доменом, брендингом и маршрутами. Это не готовый
-              шаблон «как есть»: для вашей компании мы адаптируем ту же
-              концепцию под ваш фирменный стиль и ваши направления.
+              По этой концепции уже работают сайты бронирования для
+              нескольких перевозчиков Южного и Среднего Урала. Это не
+              готовый шаблон «как есть»: для вашей компании мы адаптируем ту
+              же архитектуру под ваш фирменный стиль и ваши направления.
             </p>
+            <div className="mx-auto mt-5 flex max-w-xl flex-wrap justify-center gap-2">
+              {['Магнитогорск', 'Челябинск', 'Уфа', 'Екатеринбург', 'Банное', 'Абзаково', 'Белорецк'].map((city) => (
+                <span
+                  key={city}
+                  className="rounded-full border border-ink-900/10 bg-ink-50/60 px-3 py-1 text-xs font-medium text-ink-900/60"
+                >
+                  {city}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -277,7 +281,7 @@ export default function PassengerSite() {
       <section className="py-20 sm:py-24">
         <div className="container-page">
           <div className="rounded-3xl bg-sun-500 px-8 py-12 text-center sm:px-16">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="font-serif text-2xl font-normal text-white sm:text-3xl">
               Обсудим, как будет выглядеть сайт для вашего бренда
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-[15px] text-white/90">

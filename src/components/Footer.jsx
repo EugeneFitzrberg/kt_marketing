@@ -9,10 +9,10 @@ export default function Footer() {
         <div className="container-page py-16 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
             <div>
-              <span className="section-eyebrow !border-white/15 !bg-white/5 !text-brand-300">
+              <span className="section-eyebrow !text-brand-300">
                 Готовы начать
               </span>
-              <h2 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
+              <h2 className="mt-4 font-serif text-2xl font-normal text-white sm:text-3xl">
                 Расскажите о своей компании — предложим, с чего начать
               </h2>
               <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/60">
@@ -22,11 +22,11 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <a href="mailto:hello@kt-solutions.example" className="btn-primary">
+              <a href="mailto:hello@tit.example" className="btn-primary">
                 <Mail size={17} />
                 Написать нам
               </a>
-              <a href="https://t.me/kt_solutions" className="btn-secondary !bg-white/5 !text-white !border-white/15 hover:!bg-white/10">
+              <a href="https://t.me/tit_solutions" className="btn-secondary !bg-white/5 !text-white !border-white/15 hover:!bg-white/10">
                 <Send size={17} />
                 Telegram
               </a>
@@ -35,10 +35,10 @@ export default function Footer() {
 
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/50">
             <span className="inline-flex items-center gap-2">
-              <Mail size={15} /> hello@kt-solutions.example
+              <Mail size={15} /> hello@tit.example
             </span>
             <span className="inline-flex items-center gap-2">
-              <Send size={15} /> @kt_solutions
+              <Send size={15} /> @tit_solutions
             </span>
             <span className="inline-flex items-center gap-2">
               <Phone size={15} /> +7 (900) 000-00-00
@@ -50,10 +50,10 @@ export default function Footer() {
       <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2 text-white">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500">
-              <Bus size={16} />
+            <span className="flex h-8 w-8 items-center justify-center rounded border border-white/15">
+              <Bus size={15} strokeWidth={1.75} />
             </span>
-            <span className="text-sm font-bold">KT Solutions</span>
+            <span className="font-serif text-[15px]">TIT</span>
           </Link>
           <p className="mt-3 text-sm leading-relaxed text-white/50">
             Разрабатываем CRM и брендированные сайты бронирования для
@@ -103,7 +103,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
-          <span>© {new Date().getFullYear()} KT Solutions. Все права защищены.</span>
+          <span>© {new Date().getFullYear()} TIT. Все права защищены.</span>
           <span>Сделано для транспортных и туристических компаний</span>
         </div>
       </div>

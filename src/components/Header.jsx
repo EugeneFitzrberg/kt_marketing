@@ -15,11 +15,11 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-950/95 backdrop-blur supports-[backdrop-filter]:bg-ink-950/80">
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-white" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-500 text-white">
-            <Bus size={19} strokeWidth={2.25} />
+          <span className="flex h-9 w-9 items-center justify-center rounded border border-white/15 text-white">
+            <Bus size={18} strokeWidth={1.75} />
           </span>
-          <span className="text-[15px] font-bold leading-none tracking-tight">
-            KT Solutions
+          <span className="font-serif text-base font-normal leading-none tracking-tight">
+            TIT
             <span className="mt-0.5 block text-[11px] font-medium text-white/50">
               софт для перевозчиков
             </span>

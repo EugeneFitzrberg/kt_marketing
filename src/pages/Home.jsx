@@ -23,24 +23,17 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-40"
-          style={{
-            backgroundImage:
-              'radial-gradient(600px circle at 15% 20%, rgba(52,102,255,0.35), transparent 60%), radial-gradient(500px circle at 85% 10%, rgba(247,154,30,0.18), transparent 55%)',
-          }}
-        />
-        <div className="container-page relative grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
+      <section className="border-b border-white/10 bg-ink-950">
+        <div className="container-page grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
           <div>
-            <span className="section-eyebrow !border-white/15 !bg-white/5 !text-brand-300">
+            <span className="section-eyebrow !text-brand-300">
               Софт для автотранспортных и туристических компаний
             </span>
-            <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="mt-6 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
               CRM для вашей команды и брендированный сайт для ваших пассажиров —
-              на одной цифровой платформе
+              на одной платформе
             </h1>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/60">
+            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/60">
               Мы разрабатываем систему управления рейсами, кассой и персоналом
               и достраиваем поверх неё брендированный сайт бронирования — с
               вашим логотипом, вашим доменом и вашими особенностями, под ключ.
@@ -117,47 +110,33 @@ export default function Home() {
             description="Единый бэкенд ведёт маршруты, рейсы, места и пассажиров. Ваша команда управляет им через CRM, а пассажиры бронируют билеты на отдельном сайте — под вашим брендом, но с теми же данными в реальном времени."
           />
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <Link
-              to="/crm"
-              className="card group flex flex-col justify-between transition hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              <div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                  <Bus size={20} />
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-ink-900">
-                  Внутренняя CRM — для вашего персонала
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
-                  Маршруты, рейсы, тарифы, парк, водители, кассиры, чёрный список,
-                  экскурсии, статистика и уведомления в 4 каналах — всё в одной
-                  админке с ролями и правами доступа.
-                </p>
-              </div>
+          <div className="mt-14 grid gap-10 border-t border-ink-900/10 pt-10 sm:grid-cols-2 sm:divide-x sm:divide-ink-900/10">
+            <Link to="/crm" className="group flex flex-col sm:pr-10">
+              <span className="font-serif text-4xl text-ink-900/20">01</span>
+              <h3 className="mt-4 text-lg font-semibold text-ink-900">
+                Внутренняя CRM — для вашего персонала
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
+                Маршруты, рейсы, тарифы, парк, водители, кассиры, чёрный список,
+                экскурсии, статистика и уведомления в 4 каналах — всё в одной
+                админке с ролями и правами доступа.
+              </p>
               <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
                 Подробнее о CRM
                 <ArrowUpRight size={15} className="transition group-hover:translate-x-0.5" />
               </span>
             </Link>
 
-            <Link
-              to="/passenger-site"
-              className="card group flex flex-col justify-between transition hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              <div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sun-400/15 text-sun-600">
-                  <Globe2 size={20} />
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-ink-900">
-                  Брендированный сайт — для ваших пассажиров
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
-                  Поиск и бронирование рейсов, трансферов и групповых туров, оплата
-                  онлайн, электронный билет, личный кабинет и push-уведомления — под
-                  вашим логотипом и доменом.
-                </p>
-              </div>
+            <Link to="/passenger-site" className="group flex flex-col sm:pl-10">
+              <span className="font-serif text-4xl text-ink-900/20">02</span>
+              <h3 className="mt-4 text-lg font-semibold text-ink-900">
+                Брендированный сайт — для ваших пассажиров
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-900/60">
+                Поиск и бронирование рейсов, трансферов и групповых туров, оплата
+                онлайн, электронный билет, личный кабинет и push-уведомления — под
+                вашим логотипом и доменом.
+              </p>
               <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-sun-600">
                 Подробнее о сайте
                 <ArrowUpRight size={15} className="transition group-hover:translate-x-0.5" />
@@ -219,7 +198,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               [
                 ShieldCheck,
@@ -252,12 +231,10 @@ export default function Home() {
                 'Сайт для пассажиров и внутренняя CRM — разные приложения в разных сетевых сегментах: инцидент на одном не даёт прямого доступа к другому.',
               ],
             ].map(([Icon, title, desc]) => (
-              <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-                  <Icon size={18} />
-                </div>
-                <h3 className="mt-4 text-sm font-bold text-white">{title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-white/50">{desc}</p>
+              <div key={title} className="border-t border-white/15 pt-5">
+                <Icon size={18} strokeWidth={1.75} className="text-brand-300" />
+                <h3 className="mt-3.5 text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
           </div>
@@ -272,7 +249,7 @@ export default function Home() {
             title="Построено как промышленная система, а не как студенческий проект"
             align="center"
           />
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard icon={GitBranch} title="Обновления без простоя">
               Docker Swarm поднимает новую версию, ждёт health-check и только потом
               выключает старую — пассажиры не замечают релизов.
@@ -305,18 +282,30 @@ export default function Home() {
       {/* CASE STUDY TEASER */}
       <section id="case-study" className="py-20 sm:py-24">
         <div className="container-page">
-          <div className="grid gap-10 rounded-3xl border border-ink-900/5 bg-white p-8 shadow-card lg:grid-cols-2 lg:p-12">
+          <div className="grid gap-10 border-t border-ink-900/10 pt-12 lg:grid-cols-2">
             <div className="flex flex-col justify-center">
-              <span className="section-eyebrow">Реальный пример</span>
-              <h2 className="mt-4 text-2xl font-bold text-ink-900 sm:text-3xl">
-                «КТ Пассажиры» — сайт бронирования, построенный по этому принципу
+              <span className="section-eyebrow">Уже в работе</span>
+              <h2 className="mt-4 font-serif text-2xl font-normal text-ink-900 sm:text-3xl">
+                Нашим ПО пользуются перевозчики Урала
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-900/60">
-                Для одного из перевозчиков мы уже собрали именно такой сайт: свой
-                домен, свой логотип, оплата онлайн и личный кабинет — поверх той
-                же CRM. Мы возьмём эту же концепцию и адаптируем под ваш бренд и
-                ваши маршруты.
+                Сайты бронирования на этой платформе уже возят реальных
+                пассажиров по популярным направлениям Южного и Среднего
+                Урала. Мы возьмём ту же архитектуру и адаптируем под ваш
+                бренд и ваши маршруты.
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['Магнитогорск', 'Челябинск', 'Уфа', 'Екатеринбург', 'Банное', 'Абзаково', 'Белорецк'].map(
+                  (city) => (
+                    <span
+                      key={city}
+                      className="rounded-full border border-ink-900/10 bg-ink-50/60 px-3 py-1 text-xs font-medium text-ink-900/60"
+                    >
+                      {city}
+                    </span>
+                  ),
+                )}
+              </div>
               <Link to="/passenger-site" className="btn-primary mt-6 w-fit">
                 Как это будет выглядеть для вас
                 <ArrowUpRight size={16} />

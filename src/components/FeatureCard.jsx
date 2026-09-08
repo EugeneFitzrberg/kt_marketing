@@ -1,16 +1,14 @@
 export default function FeatureCard({ icon: Icon, title, children, tone = 'brand' }) {
   const toneClasses = {
-    brand: 'bg-brand-50 text-brand-600',
-    sun: 'bg-sun-400/15 text-sun-600',
+    brand: 'text-brand-600',
+    sun: 'text-sun-600',
   };
 
   return (
-    <div className="card h-full">
-      <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${toneClasses[tone]}`}>
-        <Icon size={20} strokeWidth={2} />
-      </div>
-      <h3 className="mt-4 text-[15px] font-bold text-ink-900">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-ink-900/60">{children}</p>
+    <div className="h-full border-t border-ink-900/10 pt-5">
+      <Icon size={19} strokeWidth={1.75} className={toneClasses[tone]} />
+      <h3 className="mt-3.5 text-[15px] font-semibold text-ink-900">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-ink-900/55">{children}</p>
     </div>
   );
 }

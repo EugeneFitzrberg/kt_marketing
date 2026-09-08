@@ -38,10 +38,10 @@ export default function Crm() {
       {/* HERO */}
       <section className="bg-ink-950">
         <div className="container-page py-16 sm:py-20">
-          <span className="section-eyebrow !border-white/15 !bg-white/5 !text-brand-300">
+          <span className="section-eyebrow !text-brand-300">
             CRM для перевозчика
           </span>
-          <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+          <h1 className="mt-6 max-w-2xl font-serif text-4xl font-normal leading-tight tracking-tight text-white sm:text-5xl">
             Единая система для рейсов, кассы, водителей и пассажиров
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/60">
@@ -172,7 +172,7 @@ export default function Crm() {
             title="Персонал, роли и права доступа"
             description="Каждый сотрудник видит только то, что ему нужно — и каждое действие остаётся в журнале."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard icon={Users} title="Гибкая матрица прав оператора">
               Транспорт, водители, расписание, пассажиры, чёрный список,
               экскурсии — каждый пункт включается независимо и проверяется
@@ -240,7 +240,7 @@ export default function Crm() {
             title="Пассажиры, экскурсии и дополнительные услуги"
             description="Оформление на кассе, ведение клиентской базы и допродажа экскурсий — из одного окна оператора."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard icon={Bus} title="Быстрое оформление на кассе">
               Запись пассажира на рейс с удержанием места на время оформления
               и обратным отсчётом, чтобы место не «зависало» впустую.
@@ -280,26 +280,21 @@ export default function Crm() {
             align="center"
             tone="dark"
           />
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               [Send, 'Telegram-бот', 'Авторизация и напоминания через telegram-бота компании'],
               [Bot, 'Max / Green API', 'Проверка, что номер вообще есть в мессенджере, и отправка через него'],
               [MessageCircle, 'WhatsApp', 'Уведомления в мессенджере, которым пользуется большинство пассажиров'],
               [Phone, 'SMS (SMSAero)', 'Гарантированный последний канал — дойдёт даже без интернета у пассажира'],
             ].map(([Icon, title, desc]) => (
-              <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-                  <Icon size={18} />
-                </div>
-                <h3 className="mt-4 text-sm font-bold text-white">{title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-white/50">{desc}</p>
+              <div key={title} className="border-t border-white/15 pt-5">
+                <Icon size={18} strokeWidth={1.75} className="text-brand-300" />
+                <h3 className="mt-3.5 text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-white/50">{desc}</p>
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-6 flex max-w-4xl items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-sun-400/20 text-sun-400">
-              <Wallet size={18} />
-            </div>
+          <div className="mx-auto mt-10 max-w-4xl border-l-2 border-sun-400/50 py-1 pl-5">
             <p className="text-xs leading-relaxed text-white/60">
               <span className="font-semibold text-white">Контроль баланса SMS</span> —
               индикатор остатка средств на SMS-рассылку прямо в шапке админки, с
@@ -375,7 +370,7 @@ export default function Crm() {
             description="Это не студенческий проект: система развёрнута с оглядкой на прод-эксплуатацию, мониторинг и безопасные обновления."
             align="center"
           />
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard icon={GitBranch} title="Обновления без простоя">
               Двухфазный деплой: сперва обновляется бэкенд с гарантией
               совместимости со старым фронтендом, затем — фронтенд. Пассажиры
@@ -415,7 +410,7 @@ export default function Crm() {
       <section className="py-20 sm:py-24">
         <div className="container-page">
           <div className="rounded-3xl bg-brand-600 px-8 py-12 text-center sm:px-16">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">
+            <h2 className="font-serif text-2xl font-normal text-white sm:text-3xl">
               Покажем CRM на демо-стенде с вашими маршрутами
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-[15px] text-brand-50/90">
