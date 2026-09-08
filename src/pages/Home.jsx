@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
+  ArrowRight,
   Bus,
   Globe2,
   ShieldCheck,
@@ -14,6 +15,9 @@ import {
   Smartphone,
   GitBranch,
   Activity,
+  ListChecks,
+  UserCheck,
+  Bot,
 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
 import FeatureCard from '../components/FeatureCard.jsx';
@@ -142,6 +146,36 @@ export default function Home() {
                 <ArrowUpRight size={15} className="transition group-hover:translate-x-0.5" />
               </span>
             </Link>
+          </div>
+
+          <div className="mt-14 rounded-2xl border border-ink-900/10 bg-ink-50/40 p-6 sm:p-8">
+            <div className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-ink-900/40">
+              Как заявка проходит через обе системы
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
+                <Globe2 size={16} className="text-sun-600" />
+                <span className="text-sm font-medium text-ink-900/80">Пассажир бронирует на сайте</span>
+              </div>
+              <ArrowRight size={16} className="text-ink-900/20" />
+              <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
+                <ListChecks size={16} className="text-brand-600" />
+                <span className="text-sm font-medium text-ink-900/80">Заявка мгновенно в очереди CRM</span>
+              </div>
+              <ArrowRight size={16} className="text-ink-900/20" />
+              <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
+                <UserCheck size={16} className="text-brand-600" />
+                <span className="text-sm font-medium text-ink-900/80">Оператор подтверждает</span>
+              </div>
+              <ArrowRight size={16} className="text-ink-900/20" />
+              <div className="flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white px-4 py-3">
+                <Bot size={16} className="text-sun-600" />
+                <span className="text-sm font-medium text-ink-900/80">Водитель отмечает явку в Telegram</span>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-xs text-ink-900/40">
+              Все шаги — в реальном времени по WebSocket, без обновления страницы и звонков между сайтом и офисом
+            </p>
           </div>
         </div>
       </section>

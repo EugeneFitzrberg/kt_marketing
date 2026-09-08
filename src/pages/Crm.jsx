@@ -27,6 +27,15 @@ import {
   UserPlus,
   UserCheck,
   PhoneIncoming,
+  Clock,
+  Copy,
+  Globe,
+  Sparkles,
+  Link2,
+  Search,
+  ListPlus,
+  MapPin,
+  ArrowRight,
 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
 import FeatureCard from '../components/FeatureCard.jsx';
@@ -74,14 +83,14 @@ export default function Crm() {
               />
               <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
                 {[
-                  'Календарь расписания (FullCalendar): регулярные рейсы по дням недели, вставные рейсы под пиковый спрос, цвет события = назначен ли транспорт, заполняемость видна сразу',
-                  'Интерактивная карта маршрута с прокладкой реального пути между точками — не прямые линии, а настоящая дорога',
-                  'Отложенное изменение цены: новый тариф на участок маршрута можно запланировать на дату в будущем — сработает само, без ручного переключения в нужный день',
-                  'Массовое копирование расписания одного дня на диапазон дат — с проверкой, что вперёд не заходит дальше разрешённого горизонта бронирования',
-                  'Индикатор «сейчас» в календаре считается по часовому поясу города отправления, а не браузера — расписание не «плывёт» для сотрудников в другом регионе',
-                ].map((item) => (
+                  [CalendarClock, 'Календарь расписания (FullCalendar): регулярные рейсы по дням недели, вставные рейсы под пиковый спрос, цвет события = назначен ли транспорт, заполняемость видна сразу'],
+                  [Route, 'Интерактивная карта маршрута с прокладкой реального пути между точками — не прямые линии, а настоящая дорога'],
+                  [Clock, 'Отложенное изменение цены: новый тариф на участок маршрута можно запланировать на дату в будущем — сработает само, без ручного переключения в нужный день'],
+                  [Copy, 'Массовое копирование расписания одного дня на диапазон дат — с проверкой, что вперёд не заходит дальше разрешённого горизонта бронирования'],
+                  [Globe, 'Индикатор «сейчас» в календаре считается по часовому поясу города отправления, а не браузера — расписание не «плывёт» для сотрудников в другом регионе'],
+                ].map(([Icon, item]) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    <Icon size={16} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-brand-500" />
                     {item}
                   </li>
                 ))}
@@ -161,13 +170,13 @@ export default function Crm() {
               />
               <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
                 {[
-                  'Комфорт-опции техники — кондиционер, TV, откидные спинки, дезинфекция — отмечаются один раз и видны и оператору при назначении, и пассажиру при выборе рейса',
-                  'Основной водитель закрепляется за машиной прямо в карточке транспорта',
-                  'Назначение машины на конкретный рейс — прямо в календаре расписания, без переключения между разделами',
-                  'Поиск по парку и водителям, когда список большой — не нужно листать всё вручную',
-                ].map((item) => (
+                  [Sparkles, 'Комфорт-опции техники — кондиционер, TV, откидные спинки, дезинфекция — отмечаются один раз и видны и оператору при назначении, и пассажиру при выборе рейса'],
+                  [Link2, 'Основной водитель закрепляется за машиной прямо в карточке транспорта'],
+                  [CalendarClock, 'Назначение машины на конкретный рейс — прямо в календаре расписания, без переключения между разделами'],
+                  [Search, 'Поиск по парку и водителям, когда список большой — не нужно листать всё вручную'],
+                ].map(([Icon, item]) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    <Icon size={16} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-brand-500" />
                     {item}
                   </li>
                 ))}
@@ -208,12 +217,12 @@ export default function Crm() {
               />
               <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
                 {[
-                  'Лист ожидания: если рейс заполнен, пассажира можно поставить в очередь и посадить, если появится место',
-                  'Пересадка пассажира на другой рейс того же маршрута в два клика, с видимым числом свободных мест',
-                  'Проверка номера в чёрном списке за секунду — даже у операторов без доступа к полному списку',
-                ].map((item) => (
+                  [ListPlus, 'Лист ожидания: если рейс заполнен, пассажира можно поставить в очередь и посадить, если появится место'],
+                  [ArrowRightLeft, 'Пересадка пассажира на другой рейс того же маршрута в два клика, с видимым числом свободных мест'],
+                  [Ban, 'Проверка номера в чёрном списке за секунду — даже у операторов без доступа к полному списку'],
+                ].map(([Icon, item]) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    <Icon size={16} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-brand-500" />
                     {item}
                   </li>
                 ))}
@@ -235,13 +244,13 @@ export default function Crm() {
               />
               <ul className="mt-6 space-y-3 text-sm text-ink-900/70">
                 {[
-                  'Точка посадки и точка высадки закрепляются за каждым пассажиром отдельно — их видно на карте остановок города',
-                  'Водитель отмечает «явка» или «неявка» по каждому пассажиру в Telegram-боте — статус обновляется в CRM в реальном времени',
-                  'Если по пассажиру числится оплата наличными водителю, это видно прямо рядом с отметкой явки — деньги не потеряются между рейсом и кассой',
-                  'Оператор в любой момент видит фактический список севших, а не только список забронировавших',
-                ].map((item) => (
+                  [MapPin, 'Точка посадки и точка высадки закрепляются за каждым пассажиром отдельно — их видно на карте остановок города'],
+                  [UserCheck, 'Водитель отмечает «явка» или «неявка» по каждому пассажиру в Telegram-боте — статус обновляется в CRM в реальном времени'],
+                  [Wallet, 'Если по пассажиру числится оплата наличными водителю, это видно прямо рядом с отметкой явки — деньги не потеряются между рейсом и кассой'],
+                  [Eye, 'Оператор в любой момент видит фактический список севших, а не только список забронировавших'],
+                ].map(([Icon, item]) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" />
+                    <Icon size={16} strokeWidth={1.75} className="mt-0.5 flex-shrink-0 text-brand-500" />
                     {item}
                   </li>
                 ))}
@@ -405,7 +414,34 @@ export default function Crm() {
             align="center"
             tone="dark"
           />
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 max-w-4xl">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
+                <Send size={16} className="text-brand-300" />
+                <span className="text-sm font-semibold text-white">Telegram</span>
+              </div>
+              <ArrowRight size={16} className="text-white/25" />
+              <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
+                <Bot size={16} className="text-brand-300" />
+                <span className="text-sm font-semibold text-white">Max</span>
+              </div>
+              <ArrowRight size={16} className="text-white/25" />
+              <div className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3">
+                <MessageCircle size={16} className="text-brand-300" />
+                <span className="text-sm font-semibold text-white">WhatsApp</span>
+              </div>
+              <ArrowRight size={16} className="text-white/25" />
+              <div className="flex items-center gap-2 rounded-xl border border-sun-400/40 bg-sun-400/10 px-4 py-3">
+                <Phone size={16} className="text-sun-400" />
+                <span className="text-sm font-semibold text-sun-300">SMS — гарантированно</span>
+              </div>
+            </div>
+            <p className="mt-3 text-center text-xs text-white/40">
+              Канал недоступен или сообщение не доставлено — система автоматически пробует следующий по цепочке
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               [Send, 'Telegram-бот', 'Авторизация и напоминания через telegram-бота компании'],
               [Bot, 'Max / Green API', 'Проверка, что номер вообще есть в мессенджере, и отправка через него'],
